@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "homepage": "https://github.com/nickaranz/slackapi-angularjs",
   "authors": [
-    "https://github.com/nickaranz"
+    "https://github.com/nickaranz",
+    "https://github.com/roslas"
   ],
   "description": "AngularJS module wrapper for the Slack Web API",
   "main": "build/ng-deg.slackapi.js",
