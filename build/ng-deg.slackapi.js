@@ -125,7 +125,7 @@
             //im
             im: {
                 close: notImplemented,
-                history: notImplemented,
+                history: imHistory,
                 list: getIMList,
                 mark: notImplemented,
                 open: notImplemented
@@ -436,6 +436,14 @@
                 token: token || slackConfig.DefaultToken
             };
             executeApiCall("im.list", params, callback);
+        }
+        function imHistory(channeId, oldest, callback, token) {
+            var params = {
+                token: token || slackConfig.DefaultToken,
+                channel: channeId,
+                oldest: oldest
+            };
+            executeApiCall("im.history", params, callback);
         }
 
         // HELPERS
