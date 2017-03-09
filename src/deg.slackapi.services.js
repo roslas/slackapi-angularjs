@@ -90,6 +90,7 @@
                 create: notImplemented,
                 createChild: notImplemented,
                 history: groupHistory,
+                info: getGroup,
                 invite: notImplemented,
                 kick: notImplemented,
                 leave: notImplemented,
@@ -401,6 +402,13 @@
                 oldest: oldest
             };
             executeApiCall("groups.history", params, callback);
+        }
+        function getGroup(channelId, callback, token) {
+            var params = {
+                token: token || slackConfig.DefaultToken,
+                channel: channelId
+            };
+            executeApiCall("groups.info", params, callback);
         }
 
         // HELPERS
