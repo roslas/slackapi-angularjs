@@ -400,23 +400,22 @@
             executeGetRequest(url, callback);
         }
         function executeGetRequest(url, callback) {
-            $http.get(url).
-              success(function (result) {
+            $http.get(url).then(
+              function (result) {
                   if (callback)
                       callback(result);
-              }).
-              error(function (data, status) {
+              },
+              function (data, status) {
                   $log.log(status);
                   $log.log(data);
               });
         }
         function executePostRequest(url, data, callback) {
-            $http.post(url, data).
-              success(function (result) {
-
+            $http.post(url, data).then(
+              function (result) {
                   callback(result);
-              }).
-              error(function (data, status) {
+              },
+              function (data, status) {
                   $log.log(status);
                   $log.log(data);
               });
