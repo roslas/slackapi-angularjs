@@ -195,10 +195,11 @@
             };
             executeApiCall("channels.unarchive", params, callback);
         }
-        function channelHistory(channeId, callback, token) {
+        function channelHistory(channeId, callback, oldest, token) {
             var params = {
                 token: token || slackConfig.DefaultToken,
-                channel: channeId
+                channel: channeId,
+                oldest: oldest
             };
             executeApiCall("channels.history", params, callback);
         }
