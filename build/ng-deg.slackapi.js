@@ -126,7 +126,7 @@
             im: {
                 close: notImplemented,
                 history: notImplemented,
-                list: notImplemented,
+                list: getIMList,
                 mark: notImplemented,
                 open: notImplemented
             },
@@ -428,6 +428,14 @@
                 channel: channelId
             };
             executeApiCall("groups.info", params, callback);
+        }
+        
+        // IM
+        function getIMList(callback, token) {
+            var params = {
+                token: token || slackConfig.DefaultToken
+            };
+            executeApiCall("im.list", params, callback);
         }
 
         // HELPERS
