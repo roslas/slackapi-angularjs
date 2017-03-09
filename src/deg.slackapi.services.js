@@ -89,7 +89,7 @@
                 close: notImplemented,
                 create: notImplemented,
                 createChild: notImplemented,
-                history: notImplemented,
+                history: groupHistory,
                 invite: notImplemented,
                 kick: notImplemented,
                 leave: notImplemented,
@@ -391,6 +391,16 @@
                 user: userId
             };
             executeApiCall("stars.list", params, callback);
+        }
+        
+        // GROUPS
+        function groupHistory(channeId, oldest, callback, token) {
+            var params = {
+                token: token || slackConfig.DefaultToken,
+                channel: channeId,
+                oldest: oldest
+            };
+            executeApiCall("groups.history", params, callback);
         }
 
         // HELPERS
