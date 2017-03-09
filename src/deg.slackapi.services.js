@@ -165,11 +165,12 @@
             slackConfig.DefaultToken = token;
             authTest(callback);
         }
-        function getAccessToken(client, secret, code, callback) {
+        function getAccessToken(client, secret, code, redirectUri, callback) {
             var params = {
                 client_id: client,
                 client_secret: secret,
-                code: code
+                code: code,
+                redirect_uri: redirectUri
             };
             executeApiCall("oauth.access", params, callback);
         }
